@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+  <!-- 配置文件，放在resource目录下即可 -->
+  <!--数据库驱动个人配置-->
+<!--  <classPathEntry-->
+  <context id="MysqlTables" targetRuntime="MyBatis3Simple">
+    <property name="autoDelimitKeywords" value="true"/>
+    <!--可以使用``包括字段名，避免字段名与sql保留字冲突报错-->
+    <!-- beginningDelimiter和endingDelimiter：指明数据库的用于标记数据库对象名的符号，比如ORACLE就是双引号，MYSQL默认是`反引号； -->
+    <property name="beginningDelimiter" value="`"/>
+    <property name="endingDelimiter" value="`"/>
+    <!-- optional，旨在创建class时，对注释进行控制 -->
+    <commentGenerator>
+      <!-- 是否去除自动生成日期的注释 true：是 ： false:否 -->
+      <property name="suppressDate" value="true"/>
+      <!-- 是否去除所有自动生成的注释 true：是 ： false:否 -->
+      <property name="suppressAllComments" value="true"/>
+    </commentGenerator>
+
+    <!--数据库连接配置-->
+    <jdbcConnection connectionURL="jdbc:mysql://127.0.0.1:3306/training?characterEncoding=utf8" 
+                  driverClass="com.mysql.cj.jdbc.Driver"
+                  userId="root"
+                  password="1qaz2wsx">
+      <property name="useInformationSchema" value="true"/>
+    </jdbcConnection>
+
+    <!-- 非必需，类型处理器，在数据库类型和java类型之间的转换控制-->
+    <!--数据库BigDecimals字段在java中定义-->
+    <javaTypeResolver>
+      <property name="forceBigDecimals" value="false"/>
+    </javaTypeResolver>
+
+    <!--生成Model类存放位置-->
+    <javaModelGenerator targetPackage="com.jp.destiny.mybatis_generator.model"
+      targetProject="src/main/java">
+      <!-- 是否允许子包，即targetPackage.schemaName.tableName -->
+      <!-- 在targetPackage的基础上，根据数据库的schema再生成一层package，最终生成的类放在这个package下，默认为false -->
+      <property name="enableSubPackages" value="true"/>
+      <!-- 是否对类CHAR类型的列的数据进行trim操作 -->
+      <!-- 设置是否在getter方法中，对String类型字段调用trim()方法 -->
+      <property name="trimStrings" value="true"/>
+      <!-- 建立的Model对象是否 不可改变  即生成的Model对象不会有 setter方法，只有构造方法。 取而代之的是类似constructorBased的类 -->
+      <property name="immutable" value="false"/>
+    </javaModelGenerator>
+
+    <!--生成Mapper.xml文件存放位置-->
+    <sqlMapGenerator targetPackage="mappers" targetProject="src/main/resources">
+      <property name="enableSubPackages" value="true"/>
+    </sqlMapGenerator>
+    
+   <!--生成mapper.java接口文件存放位置-->
+    <javaClientGenerator type="XMLMAPPER" targetPackage="com.jp.destiny.mybatis_generator.mapper"
+      targetProject="src/main/java">
+      <property name="enableSubPackages" value="true"/>
+    </javaClientGenerator>
+
+    <!--生成对应表及类名-->
+    <table tableName="MERCHANT" domainObjectName="Merchant"
+      enableCountByExample="false"
+      enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+      selectByExampleQueryId="false">
+    </table>
+
+
+  </context>
+</generatorConfiguration>

@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jp.destiny.mybatis_generator.mapper.MerchantMapper">
+  <resultMap id="BaseResultMap" type="com.jp.destiny.mybatis_generator.model.Merchant">
+    <id column="PK_ID" jdbcType="VARCHAR" property="pkId" />
+    <result column="MERCHANT_ID" jdbcType="VARCHAR" property="merchantId" />
+    <result column="PROCESS_INSTANCE_ID" jdbcType="VARCHAR" property="processInstanceId" />
+    <result column="MERCHANT_NAME" jdbcType="VARCHAR" property="merchantName" />
+    <result column="MERCHANT_SHORT_NAME" jdbcType="VARCHAR" property="merchantShortName" />
+    <result column="MERCHANT_SHORT_CODE" jdbcType="VARCHAR" property="merchantShortCode" />
+    <result column="CREDIT_CODE" jdbcType="VARCHAR" property="creditCode" />
+    <result column="UP_MERCHANT_ID" jdbcType="VARCHAR" property="upMerchantId" />
+    <result column="UP_MERCHANT_IDS" jdbcType="VARCHAR" property="upMerchantIds" />
+    <result column="REGISTERED_CAPITAL" jdbcType="VARCHAR" property="registeredCapital" />
+    <result column="REGISTERED_DATE" jdbcType="DATE" property="registeredDate" />
+    <result column="BIZ_END_DATE" jdbcType="VARCHAR" property="bizEndDate" />
+    <result column="BIZ_START_DATE" jdbcType="VARCHAR" property="bizStartDate" />
+    <result column="CONTRACT_START_DATE" jdbcType="DATE" property="contractStartDate" />
+    <result column="CONTRACT_YEAR" jdbcType="INTEGER" property="contractYear" />
+    <result column="IS_STANDARD" jdbcType="VARCHAR" property="isStandard" />
+    <result column="ADDRESS" jdbcType="VARCHAR" property="address" />
+    <result column="INDUSTRY" jdbcType="VARCHAR" property="industry" />
+    <result column="MERCHANT_RELATION_ID" jdbcType="VARCHAR" property="merchantRelationId" />
+    <result column="MERCHANT_TYPE" jdbcType="VARCHAR" property="merchantType" />
+    <result column="ENTERPRISE_TYPE" jdbcType="VARCHAR" property="enterpriseType" />
+    <result column="ENTERPRISE_MAILBOX" jdbcType="VARCHAR" property="enterpriseMailbox" />
+    <result column="LEGAL_NAME" jdbcType="VARCHAR" property="legalName" />
+    <result column="LEGAL_MOBILE" jdbcType="VARCHAR" property="legalMobile" />
+    <result column="LEGAL_ID_NO" jdbcType="VARCHAR" property="legalIdNo" />
+    <result column="LEGAL_START_DATE" jdbcType="VARCHAR" property="legalStartDate" />
+    <result column="LEGAL_END_DATE" jdbcType="VARCHAR" property="legalEndDate" />
+    <result column="LEGAL_MAILBOX" jdbcType="VARCHAR" property="legalMailbox" />
+    <result column="CONTACTS_NAME" jdbcType="VARCHAR" property="contactsName" />
+    <result column="CONTACTS_MOBILE" jdbcType="VARCHAR" property="contactsMobile" />
+    <result column="REGISTERED_COMPANY" jdbcType="VARCHAR" property="registeredCompany" />
+    <result column="MERCHANT_SOURCES" jdbcType="VARCHAR" property="merchantSources" />
+    <result column="TO_CUSTOMER_MANAGER_ID" jdbcType="VARCHAR" property="toCustomerManagerId" />
+    <result column="TO_CUSTOMER_MANAGER_NAME" jdbcType="VARCHAR" property="toCustomerManagerName" />
+    <result column="REC_USER_NAME" jdbcType="VARCHAR" property="recUserName" />
+    <result column="REC_USER_MOBILE" jdbcType="VARCHAR" property="recUserMobile" />
+    <result column="RECOMMEND_MERCHANT_NAME" jdbcType="VARCHAR" property="recommendMerchantName" />
+    <result column="RECOMMEND_MERCHANT_ID" jdbcType="VARCHAR" property="recommendMerchantId" />
+    <result column="EXPAND_USER_NAME" jdbcType="VARCHAR" property="expandUserName" />
+    <result column="REGISTERED_PROVINCE_CODE" jdbcType="VARCHAR" property="registeredProvinceCode" />
+    <result column="REGISTERED_PROVINCE_NAME" jdbcType="VARCHAR" property="registeredProvinceName" />
+    <result column="REGISTERED_CITY_CODE" jdbcType="VARCHAR" property="registeredCityCode" />
+    <result column="REGISTERED_CITY_NAME" jdbcType="VARCHAR" property="registeredCityName" />
+    <result column="REGISTERED_AREA_CODE" jdbcType="VARCHAR" property="registeredAreaCode" />
+    <result column="REGISTERED_AREA_NAME" jdbcType="VARCHAR" property="registeredAreaName" />
+    <result column="REGISTERED_ADDR" jdbcType="VARCHAR" property="registeredAddr" />
+    <result column="CONTACTS_PROVINCE_CODE" jdbcType="VARCHAR" property="contactsProvinceCode" />
+    <result column="CONTACTS_PROVINCE_NAME" jdbcType="VARCHAR" property="contactsProvinceName" />
+    <result column="CONTACTS_CITY_CODE" jdbcType="VARCHAR" property="contactsCityCode" />
+    <result column="CONTACTS_CITY_NAME" jdbcType="VARCHAR" property="contactsCityName" />
+    <result column="CONTACTS_AREA_CODE" jdbcType="VARCHAR" property="contactsAreaCode" />
+    <result column="CONTACTS_AREA_NAME" jdbcType="VARCHAR" property="contactsAreaName" />
+    <result column="CONTACTS_ADDR" jdbcType="VARCHAR" property="contactsAddr" />
+    <result column="MERCHANT_STATUS" jdbcType="VARCHAR" property="merchantStatus" />
+    <result column="BIZ_SCOPE" jdbcType="VARCHAR" property="bizScope" />
+    <result column="APPROVAL_STATUS" jdbcType="VARCHAR" property="approvalStatus" />
+    <result column="RAW_CREATE_USER" jdbcType="VARCHAR" property="rawCreateUser" />
+    <result column="RAW_CREATE_TIME" jdbcType="TIMESTAMP" property="rawCreateTime" />
+    <result column="RAW_UPDATE_USER" jdbcType="VARCHAR" property="rawUpdateUser" />
+    <result column="RAW_UPDATE_TIME" jdbcType="TIMESTAMP" property="rawUpdateTime" />
+    <result column="OPERATION_USER_NAME" jdbcType="VARCHAR" property="operationUserName" />
+    <result column="OPERATION_USER_MOBILE" jdbcType="VARCHAR" property="operationUserMobile" />
+    <result column="FINANCE_USER_NAME" jdbcType="VARCHAR" property="financeUserName" />
+    <result column="FINANCE_USER_MOBILE" jdbcType="VARCHAR" property="financeUserMobile" />
+    <result column="OTHER_USER_NAME" jdbcType="VARCHAR" property="otherUserName" />
+    <result column="OTHER_USER_MOBILE" jdbcType="VARCHAR" property="otherUserMobile" />
+    <result column="CONTROL_USER_TYPE" jdbcType="VARCHAR" property="controlUserType" />
+    <result column="CONTROL_USER_NAME" jdbcType="VARCHAR" property="controlUserName" />
+    <result column="CONTROL_USER_MOBILE" jdbcType="VARCHAR" property="controlUserMobile" />
+    <result column="CONTROL_ID_NO" jdbcType="VARCHAR" property="controlIdNo" />
+    <result column="IS_LEGAL_PERSON_CHANGE" jdbcType="VARCHAR" property="isLegalPersonChange" />
+    <result column="IS_LEGAL_SIGN" jdbcType="INTEGER" property="isLegalSign" />
+    <result column="BELONG_OPPORTUNITY_ID" jdbcType="VARCHAR" property="belongOpportunityId" />
+    <result column="BELONG_OPPORTUNITY_NAME" jdbcType="VARCHAR" property="belongOpportunityName" />
+    <result column="VERIFICATION_DESC" jdbcType="VARCHAR" property="verificationDesc" />
+    <result column="CURRENT_ROLE_ID" jdbcType="VARCHAR" property="currentRoleId" />
+    <result column="ESIGN_ACCOUNT_ID" jdbcType="VARCHAR" property="esignAccountId" />
+    <result column="STAFF_NUM" jdbcType="INTEGER" property="staffNum" />
+    <result column="MONTH_LOAN_AMT" jdbcType="DECIMAL" property="monthLoanAmt" />
+    <result column="IS_TENANT" jdbcType="VARCHAR" property="isTenant" />
+    <result column="FUNDING_PARTY_NATURE" jdbcType="VARCHAR" property="fundingPartyNature" />
+    <result column="USE_AUTH_LEVEL" jdbcType="VARCHAR" property="useAuthLevel" />
+    <result column="FOLLOWER" jdbcType="VARCHAR" property="follower" />
+    <result column="CHARGING_VERSION" jdbcType="VARCHAR" property="chargingVersion" />
+    <result column="CONTRACT_BILLING_START_DATE" jdbcType="DATE" property="contractBillingStartDate" />
+    <result column="CONTRACT_BILLING_YEAR" jdbcType="VARCHAR" property="contractBillingYear" />
+    <result column="MERCHANT_CHARGE_ACCOUNT_OPEN" jdbcType="VARCHAR" property="merchantChargeAccountOpen" />
+    <result column="FOLLOWER_ID" jdbcType="VARCHAR" property="followerId" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from MERCHANT
+    where PK_ID = #{pkId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.jp.destiny.mybatis_generator.model.Merchant">
+    insert into MERCHANT (PK_ID, MERCHANT_ID, PROCESS_INSTANCE_ID, 
+      MERCHANT_NAME, MERCHANT_SHORT_NAME, MERCHANT_SHORT_CODE, 
+      CREDIT_CODE, UP_MERCHANT_ID, UP_MERCHANT_IDS, 
+      REGISTERED_CAPITAL, REGISTERED_DATE, BIZ_END_DATE, 
+      BIZ_START_DATE, CONTRACT_START_DATE, CONTRACT_YEAR, 
+      IS_STANDARD, ADDRESS, INDUSTRY, 
+      MERCHANT_RELATION_ID, MERCHANT_TYPE, ENTERPRISE_TYPE, 
+      ENTERPRISE_MAILBOX, LEGAL_NAME, LEGAL_MOBILE, 
+      LEGAL_ID_NO, LEGAL_START_DATE, LEGAL_END_DATE, 
+      LEGAL_MAILBOX, CONTACTS_NAME, CONTACTS_MOBILE, 
+      REGISTERED_COMPANY, MERCHANT_SOURCES, TO_CUSTOMER_MANAGER_ID, 
+      TO_CUSTOMER_MANAGER_NAME, REC_USER_NAME, REC_USER_MOBILE, 
+      RECOMMEND_MERCHANT_NAME, RECOMMEND_MERCHANT_ID, 
+      EXPAND_USER_NAME, REGISTERED_PROVINCE_CODE, 
+      REGISTERED_PROVINCE_NAME, REGISTERED_CITY_CODE, 
+      REGISTERED_CITY_NAME, REGISTERED_AREA_CODE, 
+      REGISTERED_AREA_NAME, REGISTERED_ADDR, CONTACTS_PROVINCE_CODE, 
+      CONTACTS_PROVINCE_NAME, CONTACTS_CITY_CODE, 
+      CONTACTS_CITY_NAME, CONTACTS_AREA_CODE, CONTACTS_AREA_NAME, 
+      CONTACTS_ADDR, MERCHANT_STATUS, BIZ_SCOPE, 
+      APPROVAL_STATUS, RAW_CREATE_USER, RAW_CREATE_TIME, 
+      RAW_UPDATE_USER, RAW_UPDATE_TIME, OPERATION_USER_NAME, 
+      OPERATION_USER_MOBILE, FINANCE_USER_NAME, FINANCE_USER_MOBILE, 
+      OTHER_USER_NAME, OTHER_USER_MOBILE, CONTROL_USER_TYPE, 
+      CONTROL_USER_NAME, CONTROL_USER_MOBILE, CONTROL_ID_NO, 
+      IS_LEGAL_PERSON_CHANGE, IS_LEGAL_SIGN, BELONG_OPPORTUNITY_ID, 
+      BELONG_OPPORTUNITY_NAME, VERIFICATION_DESC, 
+      CURRENT_ROLE_ID, ESIGN_ACCOUNT_ID, STAFF_NUM, 
+      MONTH_LOAN_AMT, IS_TENANT, FUNDING_PARTY_NATURE, 
+      USE_AUTH_LEVEL, FOLLOWER, CHARGING_VERSION, 
+      CONTRACT_BILLING_START_DATE, CONTRACT_BILLING_YEAR, 
+      MERCHANT_CHARGE_ACCOUNT_OPEN, FOLLOWER_ID)
+    values (#{pkId,jdbcType=VARCHAR}, #{merchantId,jdbcType=VARCHAR}, #{processInstanceId,jdbcType=VARCHAR}, 
+      #{merchantName,jdbcType=VARCHAR}, #{merchantShortName,jdbcType=VARCHAR}, #{merchantShortCode,jdbcType=VARCHAR}, 
+      #{creditCode,jdbcType=VARCHAR}, #{upMerchantId,jdbcType=VARCHAR}, #{upMerchantIds,jdbcType=VARCHAR}, 
+      #{registeredCapital,jdbcType=VARCHAR}, #{registeredDate,jdbcType=DATE}, #{bizEndDate,jdbcType=VARCHAR}, 
+      #{bizStartDate,jdbcType=VARCHAR}, #{contractStartDate,jdbcType=DATE}, #{contractYear,jdbcType=INTEGER}, 
+      #{isStandard,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{industry,jdbcType=VARCHAR}, 
+      #{merchantRelationId,jdbcType=VARCHAR}, #{merchantType,jdbcType=VARCHAR}, #{enterpriseType,jdbcType=VARCHAR}, 
+      #{enterpriseMailbox,jdbcType=VARCHAR}, #{legalName,jdbcType=VARCHAR}, #{legalMobile,jdbcType=VARCHAR}, 
+      #{legalIdNo,jdbcType=VARCHAR}, #{legalStartDate,jdbcType=VARCHAR}, #{legalEndDate,jdbcType=VARCHAR}, 
+      #{legalMailbox,jdbcType=VARCHAR}, #{contactsName,jdbcType=VARCHAR}, #{contactsMobile,jdbcType=VARCHAR}, 
+      #{registeredCompany,jdbcType=VARCHAR}, #{merchantSources,jdbcType=VARCHAR}, #{toCustomerManagerId,jdbcType=VARCHAR}, 
+      #{toCustomerManagerName,jdbcType=VARCHAR}, #{recUserName,jdbcType=VARCHAR}, #{recUserMobile,jdbcType=VARCHAR}, 
+      #{recommendMerchantName,jdbcType=VARCHAR}, #{recommendMerchantId,jdbcType=VARCHAR}, 
+      #{expandUserName,jdbcType=VARCHAR}, #{registeredProvinceCode,jdbcType=VARCHAR}, 
+      #{registeredProvinceName,jdbcType=VARCHAR}, #{registeredCityCode,jdbcType=VARCHAR}, 
+      #{registeredCityName,jdbcType=VARCHAR}, #{registeredAreaCode,jdbcType=VARCHAR}, 
+      #{registeredAreaName,jdbcType=VARCHAR}, #{registeredAddr,jdbcType=VARCHAR}, #{contactsProvinceCode,jdbcType=VARCHAR}, 
+      #{contactsProvinceName,jdbcType=VARCHAR}, #{contactsCityCode,jdbcType=VARCHAR}, 
+      #{contactsCityName,jdbcType=VARCHAR}, #{contactsAreaCode,jdbcType=VARCHAR}, #{contactsAreaName,jdbcType=VARCHAR}, 
+      #{contactsAddr,jdbcType=VARCHAR}, #{merchantStatus,jdbcType=VARCHAR}, #{bizScope,jdbcType=VARCHAR}, 
+      #{approvalStatus,jdbcType=VARCHAR}, #{rawCreateUser,jdbcType=VARCHAR}, #{rawCreateTime,jdbcType=TIMESTAMP}, 
+      #{rawUpdateUser,jdbcType=VARCHAR}, #{rawUpdateTime,jdbcType=TIMESTAMP}, #{operationUserName,jdbcType=VARCHAR}, 
+      #{operationUserMobile,jdbcType=VARCHAR}, #{financeUserName,jdbcType=VARCHAR}, #{financeUserMobile,jdbcType=VARCHAR}, 
+      #{otherUserName,jdbcType=VARCHAR}, #{otherUserMobile,jdbcType=VARCHAR}, #{controlUserType,jdbcType=VARCHAR}, 
+      #{controlUserName,jdbcType=VARCHAR}, #{controlUserMobile,jdbcType=VARCHAR}, #{controlIdNo,jdbcType=VARCHAR}, 
+      #{isLegalPersonChange,jdbcType=VARCHAR}, #{isLegalSign,jdbcType=INTEGER}, #{belongOpportunityId,jdbcType=VARCHAR}, 
+      #{belongOpportunityName,jdbcType=VARCHAR}, #{verificationDesc,jdbcType=VARCHAR}, 
+      #{currentRoleId,jdbcType=VARCHAR}, #{esignAccountId,jdbcType=VARCHAR}, #{staffNum,jdbcType=INTEGER}, 
+      #{monthLoanAmt,jdbcType=DECIMAL}, #{isTenant,jdbcType=VARCHAR}, #{fundingPartyNature,jdbcType=VARCHAR}, 
+      #{useAuthLevel,jdbcType=VARCHAR}, #{follower,jdbcType=VARCHAR}, #{chargingVersion,jdbcType=VARCHAR}, 
+      #{contractBillingStartDate,jdbcType=DATE}, #{contractBillingYear,jdbcType=VARCHAR}, 
+      #{merchantChargeAccountOpen,jdbcType=VARCHAR}, #{followerId,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.jp.destiny.mybatis_generator.model.Merchant">
+    update MERCHANT
+    set MERCHANT_ID = #{merchantId,jdbcType=VARCHAR},
+      PROCESS_INSTANCE_ID = #{processInstanceId,jdbcType=VARCHAR},
+      MERCHANT_NAME = #{merchantName,jdbcType=VARCHAR},
+      MERCHANT_SHORT_NAME = #{merchantShortName,jdbcType=VARCHAR},
+      MERCHANT_SHORT_CODE = #{merchantShortCode,jdbcType=VARCHAR},
+      CREDIT_CODE = #{creditCode,jdbcType=VARCHAR},
+      UP_MERCHANT_ID = #{upMerchantId,jdbcType=VARCHAR},
+      UP_MERCHANT_IDS = #{upMerchantIds,jdbcType=VARCHAR},
+      REGISTERED_CAPITAL = #{registeredCapital,jdbcType=VARCHAR},
+      REGISTERED_DATE = #{registeredDate,jdbcType=DATE},
+      BIZ_END_DATE = #{bizEndDate,jdbcType=VARCHAR},
+      BIZ_START_DATE = #{bizStartDate,jdbcType=VARCHAR},
+      CONTRACT_START_DATE = #{contractStartDate,jdbcType=DATE},
+      CONTRACT_YEAR = #{contractYear,jdbcType=INTEGER},
+      IS_STANDARD = #{isStandard,jdbcType=VARCHAR},
+      ADDRESS = #{address,jdbcType=VARCHAR},
+      INDUSTRY = #{industry,jdbcType=VARCHAR},
+      MERCHANT_RELATION_ID = #{merchantRelationId,jdbcType=VARCHAR},
+      MERCHANT_TYPE = #{merchantType,jdbcType=VARCHAR},
+      ENTERPRISE_TYPE = #{enterpriseType,jdbcType=VARCHAR},
+      ENTERPRISE_MAILBOX = #{enterpriseMailbox,jdbcType=VARCHAR},
+      LEGAL_NAME = #{legalName,jdbcType=VARCHAR},
+      LEGAL_MOBILE = #{legalMobile,jdbcType=VARCHAR},
+      LEGAL_ID_NO = #{legalIdNo,jdbcType=VARCHAR},
+      LEGAL_START_DATE = #{legalStartDate,jdbcType=VARCHAR},
+      LEGAL_END_DATE = #{legalEndDate,jdbcType=VARCHAR},
+      LEGAL_MAILBOX = #{legalMailbox,jdbcType=VARCHAR},
+      CONTACTS_NAME = #{contactsName,jdbcType=VARCHAR},
+      CONTACTS_MOBILE = #{contactsMobile,jdbcType=VARCHAR},
+      REGISTERED_COMPANY = #{registeredCompany,jdbcType=VARCHAR},
+      MERCHANT_SOURCES = #{merchantSources,jdbcType=VARCHAR},
+      TO_CUSTOMER_MANAGER_ID = #{toCustomerManagerId,jdbcType=VARCHAR},
+      TO_CUSTOMER_MANAGER_NAME = #{toCustomerManagerName,jdbcType=VARCHAR},
+      REC_USER_NAME = #{recUserName,jdbcType=VARCHAR},
+      REC_USER_MOBILE = #{recUserMobile,jdbcType=VARCHAR},
+      RECOMMEND_MERCHANT_NAME = #{recommendMerchantName,jdbcType=VARCHAR},
+      RECOMMEND_MERCHANT_ID = #{recommendMerchantId,jdbcType=VARCHAR},
+      EXPAND_USER_NAME = #{expandUserName,jdbcType=VARCHAR},
+      REGISTERED_PROVINCE_CODE = #{registeredProvinceCode,jdbcType=VARCHAR},
+      REGISTERED_PROVINCE_NAME = #{registeredProvinceName,jdbcType=VARCHAR},
+      REGISTERED_CITY_CODE = #{registeredCityCode,jdbcType=VARCHAR},
+      REGISTERED_CITY_NAME = #{registeredCityName,jdbcType=VARCHAR},
+      REGISTERED_AREA_CODE = #{registeredAreaCode,jdbcType=VARCHAR},
+      REGISTERED_AREA_NAME = #{registeredAreaName,jdbcType=VARCHAR},
+      REGISTERED_ADDR = #{registeredAddr,jdbcType=VARCHAR},
+      CONTACTS_PROVINCE_CODE = #{contactsProvinceCode,jdbcType=VARCHAR},
+      CONTACTS_PROVINCE_NAME = #{contactsProvinceName,jdbcType=VARCHAR},
+      CONTACTS_CITY_CODE = #{contactsCityCode,jdbcType=VARCHAR},
+      CONTACTS_CITY_NAME = #{contactsCityName,jdbcType=VARCHAR},
+      CONTACTS_AREA_CODE = #{contactsAreaCode,jdbcType=VARCHAR},
+      CONTACTS_AREA_NAME = #{contactsAreaName,jdbcType=VARCHAR},
+      CONTACTS_ADDR = #{contactsAddr,jdbcType=VARCHAR},
+      MERCHANT_STATUS = #{merchantStatus,jdbcType=VARCHAR},
+      BIZ_SCOPE = #{bizScope,jdbcType=VARCHAR},
+      APPROVAL_STATUS = #{approvalStatus,jdbcType=VARCHAR},
+      RAW_CREATE_USER = #{rawCreateUser,jdbcType=VARCHAR},
+      RAW_CREATE_TIME = #{rawCreateTime,jdbcType=TIMESTAMP},
+      RAW_UPDATE_USER = #{rawUpdateUser,jdbcType=VARCHAR},
+      RAW_UPDATE_TIME = #{rawUpdateTime,jdbcType=TIMESTAMP},
+      OPERATION_USER_NAME = #{operationUserName,jdbcType=VARCHAR},
+      OPERATION_USER_MOBILE = #{operationUserMobile,jdbcType=VARCHAR},
+      FINANCE_USER_NAME = #{financeUserName,jdbcType=VARCHAR},
+      FINANCE_USER_MOBILE = #{financeUserMobile,jdbcType=VARCHAR},
+      OTHER_USER_NAME = #{otherUserName,jdbcType=VARCHAR},
+      OTHER_USER_MOBILE = #{otherUserMobile,jdbcType=VARCHAR},
+      CONTROL_USER_TYPE = #{controlUserType,jdbcType=VARCHAR},
+      CONTROL_USER_NAME = #{controlUserName,jdbcType=VARCHAR},
+      CONTROL_USER_MOBILE = #{controlUserMobile,jdbcType=VARCHAR},
+      CONTROL_ID_NO = #{controlIdNo,jdbcType=VARCHAR},
+      IS_LEGAL_PERSON_CHANGE = #{isLegalPersonChange,jdbcType=VARCHAR},
+      IS_LEGAL_SIGN = #{isLegalSign,jdbcType=INTEGER},
+      BELONG_OPPORTUNITY_ID = #{belongOpportunityId,jdbcType=VARCHAR},
+      BELONG_OPPORTUNITY_NAME = #{belongOpportunityName,jdbcType=VARCHAR},
+      VERIFICATION_DESC = #{verificationDesc,jdbcType=VARCHAR},
+      CURRENT_ROLE_ID = #{currentRoleId,jdbcType=VARCHAR},
+      ESIGN_ACCOUNT_ID = #{esignAccountId,jdbcType=VARCHAR},
+      STAFF_NUM = #{staffNum,jdbcType=INTEGER},
+      MONTH_LOAN_AMT = #{monthLoanAmt,jdbcType=DECIMAL},
+      IS_TENANT = #{isTenant,jdbcType=VARCHAR},
+      FUNDING_PARTY_NATURE = #{fundingPartyNature,jdbcType=VARCHAR},
+      USE_AUTH_LEVEL = #{useAuthLevel,jdbcType=VARCHAR},
+      FOLLOWER = #{follower,jdbcType=VARCHAR},
+      CHARGING_VERSION = #{chargingVersion,jdbcType=VARCHAR},
+      CONTRACT_BILLING_START_DATE = #{contractBillingStartDate,jdbcType=DATE},
+      CONTRACT_BILLING_YEAR = #{contractBillingYear,jdbcType=VARCHAR},
+      MERCHANT_CHARGE_ACCOUNT_OPEN = #{merchantChargeAccountOpen,jdbcType=VARCHAR},
+      FOLLOWER_ID = #{followerId,jdbcType=VARCHAR}
+    where PK_ID = #{pkId,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select PK_ID, MERCHANT_ID, PROCESS_INSTANCE_ID, MERCHANT_NAME, MERCHANT_SHORT_NAME, 
+    MERCHANT_SHORT_CODE, CREDIT_CODE, UP_MERCHANT_ID, UP_MERCHANT_IDS, REGISTERED_CAPITAL, 
+    REGISTERED_DATE, BIZ_END_DATE, BIZ_START_DATE, CONTRACT_START_DATE, CONTRACT_YEAR, 
+    IS_STANDARD, ADDRESS, INDUSTRY, MERCHANT_RELATION_ID, MERCHANT_TYPE, ENTERPRISE_TYPE, 
+    ENTERPRISE_MAILBOX, LEGAL_NAME, LEGAL_MOBILE, LEGAL_ID_NO, LEGAL_START_DATE, LEGAL_END_DATE, 
+    LEGAL_MAILBOX, CONTACTS_NAME, CONTACTS_MOBILE, REGISTERED_COMPANY, MERCHANT_SOURCES, 
+    TO_CUSTOMER_MANAGER_ID, TO_CUSTOMER_MANAGER_NAME, REC_USER_NAME, REC_USER_MOBILE, 
+    RECOMMEND_MERCHANT_NAME, RECOMMEND_MERCHANT_ID, EXPAND_USER_NAME, REGISTERED_PROVINCE_CODE, 
+    REGISTERED_PROVINCE_NAME, REGISTERED_CITY_CODE, REGISTERED_CITY_NAME, REGISTERED_AREA_CODE, 
+    REGISTERED_AREA_NAME, REGISTERED_ADDR, CONTACTS_PROVINCE_CODE, CONTACTS_PROVINCE_NAME, 
+    CONTACTS_CITY_CODE, CONTACTS_CITY_NAME, CONTACTS_AREA_CODE, CONTACTS_AREA_NAME, CONTACTS_ADDR, 
+    MERCHANT_STATUS, BIZ_SCOPE, APPROVAL_STATUS, RAW_CREATE_USER, RAW_CREATE_TIME, RAW_UPDATE_USER, 
+    RAW_UPDATE_TIME, OPERATION_USER_NAME, OPERATION_USER_MOBILE, FINANCE_USER_NAME, FINANCE_USER_MOBILE, 
+    OTHER_USER_NAME, OTHER_USER_MOBILE, CONTROL_USER_TYPE, CONTROL_USER_NAME, CONTROL_USER_MOBILE, 
+    CONTROL_ID_NO, IS_LEGAL_PERSON_CHANGE, IS_LEGAL_SIGN, BELONG_OPPORTUNITY_ID, BELONG_OPPORTUNITY_NAME, 
+    VERIFICATION_DESC, CURRENT_ROLE_ID, ESIGN_ACCOUNT_ID, STAFF_NUM, MONTH_LOAN_AMT, 
+    IS_TENANT, FUNDING_PARTY_NATURE, USE_AUTH_LEVEL, FOLLOWER, CHARGING_VERSION, CONTRACT_BILLING_START_DATE, 
+    CONTRACT_BILLING_YEAR, MERCHANT_CHARGE_ACCOUNT_OPEN, FOLLOWER_ID
+    from MERCHANT
+    where PK_ID = #{pkId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select PK_ID, MERCHANT_ID, PROCESS_INSTANCE_ID, MERCHANT_NAME, MERCHANT_SHORT_NAME, 
+    MERCHANT_SHORT_CODE, CREDIT_CODE, UP_MERCHANT_ID, UP_MERCHANT_IDS, REGISTERED_CAPITAL, 
+    REGISTERED_DATE, BIZ_END_DATE, BIZ_START_DATE, CONTRACT_START_DATE, CONTRACT_YEAR, 
+    IS_STANDARD, ADDRESS, INDUSTRY, MERCHANT_RELATION_ID, MERCHANT_TYPE, ENTERPRISE_TYPE, 
+    ENTERPRISE_MAILBOX, LEGAL_NAME, LEGAL_MOBILE, LEGAL_ID_NO, LEGAL_START_DATE, LEGAL_END_DATE, 
+    LEGAL_MAILBOX, CONTACTS_NAME, CONTACTS_MOBILE, REGISTERED_COMPANY, MERCHANT_SOURCES, 
+    TO_CUSTOMER_MANAGER_ID, TO_CUSTOMER_MANAGER_NAME, REC_USER_NAME, REC_USER_MOBILE, 
+    RECOMMEND_MERCHANT_NAME, RECOMMEND_MERCHANT_ID, EXPAND_USER_NAME, REGISTERED_PROVINCE_CODE, 
+    REGISTERED_PROVINCE_NAME, REGISTERED_CITY_CODE, REGISTERED_CITY_NAME, REGISTERED_AREA_CODE, 
+    REGISTERED_AREA_NAME, REGISTERED_ADDR, CONTACTS_PROVINCE_CODE, CONTACTS_PROVINCE_NAME, 
+    CONTACTS_CITY_CODE, CONTACTS_CITY_NAME, CONTACTS_AREA_CODE, CONTACTS_AREA_NAME, CONTACTS_ADDR, 
+    MERCHANT_STATUS, BIZ_SCOPE, APPROVAL_STATUS, RAW_CREATE_USER, RAW_CREATE_TIME, RAW_UPDATE_USER, 
+    RAW_UPDATE_TIME, OPERATION_USER_NAME, OPERATION_USER_MOBILE, FINANCE_USER_NAME, FINANCE_USER_MOBILE, 
+    OTHER_USER_NAME, OTHER_USER_MOBILE, CONTROL_USER_TYPE, CONTROL_USER_NAME, CONTROL_USER_MOBILE, 
+    CONTROL_ID_NO, IS_LEGAL_PERSON_CHANGE, IS_LEGAL_SIGN, BELONG_OPPORTUNITY_ID, BELONG_OPPORTUNITY_NAME, 
+    VERIFICATION_DESC, CURRENT_ROLE_ID, ESIGN_ACCOUNT_ID, STAFF_NUM, MONTH_LOAN_AMT, 
+    IS_TENANT, FUNDING_PARTY_NATURE, USE_AUTH_LEVEL, FOLLOWER, CHARGING_VERSION, CONTRACT_BILLING_START_DATE, 
+    CONTRACT_BILLING_YEAR, MERCHANT_CHARGE_ACCOUNT_OPEN, FOLLOWER_ID
+    from MERCHANT
+  </select>
+  <resultMap id="BaseResultMap" type="com.jp.destiny.mybatis_generator.model.Merchant">
+    <id column="PK_ID" jdbcType="VARCHAR" property="pkId" />
+    <result column="MERCHANT_ID" jdbcType="VARCHAR" property="merchantId" />
+    <result column="PROCESS_INSTANCE_ID" jdbcType="VARCHAR" property="processInstanceId" />
+    <result column="MERCHANT_NAME" jdbcType="VARCHAR" property="merchantName" />
+    <result column="MERCHANT_SHORT_NAME" jdbcType="VARCHAR" property="merchantShortName" />
+    <result column="MERCHANT_SHORT_CODE" jdbcType="VARCHAR" property="merchantShortCode" />
+    <result column="CREDIT_CODE" jdbcType="VARCHAR" property="creditCode" />
+    <result column="UP_MERCHANT_ID" jdbcType="VARCHAR" property="upMerchantId" />
+    <result column="UP_MERCHANT_IDS" jdbcType="VARCHAR" property="upMerchantIds" />
+    <result column="REGISTERED_CAPITAL" jdbcType="VARCHAR" property="registeredCapital" />
+    <result column="REGISTERED_DATE" jdbcType="DATE" property="registeredDate" />
+    <result column="BIZ_END_DATE" jdbcType="VARCHAR" property="bizEndDate" />
+    <result column="BIZ_START_DATE" jdbcType="VARCHAR" property="bizStartDate" />
+    <result column="CONTRACT_START_DATE" jdbcType="DATE" property="contractStartDate" />
+    <result column="CONTRACT_YEAR" jdbcType="INTEGER" property="contractYear" />
+    <result column="IS_STANDARD" jdbcType="VARCHAR" property="isStandard" />
+    <result column="ADDRESS" jdbcType="VARCHAR" property="address" />
+    <result column="INDUSTRY" jdbcType="VARCHAR" property="industry" />
+    <result column="MERCHANT_RELATION_ID" jdbcType="VARCHAR" property="merchantRelationId" />
+    <result column="MERCHANT_TYPE" jdbcType="VARCHAR" property="merchantType" />
+    <result column="ENTERPRISE_TYPE" jdbcType="VARCHAR" property="enterpriseType" />
+    <result column="ENTERPRISE_MAILBOX" jdbcType="VARCHAR" property="enterpriseMailbox" />
+    <result column="LEGAL_NAME" jdbcType="VARCHAR" property="legalName" />
+    <result column="LEGAL_MOBILE" jdbcType="VARCHAR" property="legalMobile" />
+    <result column="LEGAL_ID_NO" jdbcType="VARCHAR" property="legalIdNo" />
+    <result column="LEGAL_START_DATE" jdbcType="VARCHAR" property="legalStartDate" />
+    <result column="LEGAL_END_DATE" jdbcType="VARCHAR" property="legalEndDate" />
+    <result column="LEGAL_MAILBOX" jdbcType="VARCHAR" property="legalMailbox" />
+    <result column="CONTACTS_NAME" jdbcType="VARCHAR" property="contactsName" />
+    <result column="CONTACTS_MOBILE" jdbcType="VARCHAR" property="contactsMobile" />
+    <result column="REGISTERED_COMPANY" jdbcType="VARCHAR" property="registeredCompany" />
+    <result column="MERCHANT_SOURCES" jdbcType="VARCHAR" property="merchantSources" />
+    <result column="TO_CUSTOMER_MANAGER_ID" jdbcType="VARCHAR" property="toCustomerManagerId" />
+    <result column="TO_CUSTOMER_MANAGER_NAME" jdbcType="VARCHAR" property="toCustomerManagerName" />
+    <result column="REC_USER_NAME" jdbcType="VARCHAR" property="recUserName" />
+    <result column="REC_USER_MOBILE" jdbcType="VARCHAR" property="recUserMobile" />
+    <result column="RECOMMEND_MERCHANT_NAME" jdbcType="VARCHAR" property="recommendMerchantName" />
+    <result column="RECOMMEND_MERCHANT_ID" jdbcType="VARCHAR" property="recommendMerchantId" />
+    <result column="EXPAND_USER_NAME" jdbcType="VARCHAR" property="expandUserName" />
+    <result column="REGISTERED_PROVINCE_CODE" jdbcType="VARCHAR" property="registeredProvinceCode" />
+    <result column="REGISTERED_PROVINCE_NAME" jdbcType="VARCHAR" property="registeredProvinceName" />
+    <result column="REGISTERED_CITY_CODE" jdbcType="VARCHAR" property="registeredCityCode" />
+    <result column="REGISTERED_CITY_NAME" jdbcType="VARCHAR" property="registeredCityName" />
+    <result column="REGISTERED_AREA_CODE" jdbcType="VARCHAR" property="registeredAreaCode" />
+    <result column="REGISTERED_AREA_NAME" jdbcType="VARCHAR" property="registeredAreaName" />
+    <result column="REGISTERED_ADDR" jdbcType="VARCHAR" property="registeredAddr" />
+    <result column="CONTACTS_PROVINCE_CODE" jdbcType="VARCHAR" property="contactsProvinceCode" />
+    <result column="CONTACTS_PROVINCE_NAME" jdbcType="VARCHAR" property="contactsProvinceName" />
+    <result column="CONTACTS_CITY_CODE" jdbcType="VARCHAR" property="contactsCityCode" />
+    <result column="CONTACTS_CITY_NAME" jdbcType="VARCHAR" property="contactsCityName" />
+    <result column="CONTACTS_AREA_CODE" jdbcType="VARCHAR" property="contactsAreaCode" />
+    <result column="CONTACTS_AREA_NAME" jdbcType="VARCHAR" property="contactsAreaName" />
+    <result column="CONTACTS_ADDR" jdbcType="VARCHAR" property="contactsAddr" />
+    <result column="MERCHANT_STATUS" jdbcType="VARCHAR" property="merchantStatus" />
+    <result column="BIZ_SCOPE" jdbcType="VARCHAR" property="bizScope" />
+    <result column="APPROVAL_STATUS" jdbcType="VARCHAR" property="approvalStatus" />
+    <result column="RAW_CREATE_USER" jdbcType="VARCHAR" property="rawCreateUser" />
+    <result column="RAW_CREATE_TIME" jdbcType="TIMESTAMP" property="rawCreateTime" />
+    <result column="RAW_UPDATE_USER" jdbcType="VARCHAR" property="rawUpdateUser" />
+    <result column="RAW_UPDATE_TIME" jdbcType="TIMESTAMP" property="rawUpdateTime" />
+    <result column="OPERATION_USER_NAME" jdbcType="VARCHAR" property="operationUserName" />
+    <result column="OPERATION_USER_MOBILE" jdbcType="VARCHAR" property="operationUserMobile" />
+    <result column="FINANCE_USER_NAME" jdbcType="VARCHAR" property="financeUserName" />
+    <result column="FINANCE_USER_MOBILE" jdbcType="VARCHAR" property="financeUserMobile" />
+    <result column="OTHER_USER_NAME" jdbcType="VARCHAR" property="otherUserName" />
+    <result column="OTHER_USER_MOBILE" jdbcType="VARCHAR" property="otherUserMobile" />
+    <result column="CONTROL_USER_TYPE" jdbcType="VARCHAR" property="controlUserType" />
+    <result column="CONTROL_USER_NAME" jdbcType="VARCHAR" property="controlUserName" />
+    <result column="CONTROL_USER_MOBILE" jdbcType="VARCHAR" property="controlUserMobile" />
+    <result column="CONTROL_ID_NO" jdbcType="VARCHAR" property="controlIdNo" />
+    <result column="IS_LEGAL_PERSON_CHANGE" jdbcType="VARCHAR" property="isLegalPersonChange" />
+    <result column="IS_LEGAL_SIGN" jdbcType="INTEGER" property="isLegalSign" />
+    <result column="BELONG_OPPORTUNITY_ID" jdbcType="VARCHAR" property="belongOpportunityId" />
+    <result column="BELONG_OPPORTUNITY_NAME" jdbcType="VARCHAR" property="belongOpportunityName" />
+    <result column="VERIFICATION_DESC" jdbcType="VARCHAR" property="verificationDesc" />
+    <result column="CURRENT_ROLE_ID" jdbcType="VARCHAR" property="currentRoleId" />
+    <result column="ESIGN_ACCOUNT_ID" jdbcType="VARCHAR" property="esignAccountId" />
+    <result column="STAFF_NUM" jdbcType="INTEGER" property="staffNum" />
+    <result column="MONTH_LOAN_AMT" jdbcType="DECIMAL" property="monthLoanAmt" />
+    <result column="IS_TENANT" jdbcType="VARCHAR" property="isTenant" />
+    <result column="FUNDING_PARTY_NATURE" jdbcType="VARCHAR" property="fundingPartyNature" />
+    <result column="USE_AUTH_LEVEL" jdbcType="VARCHAR" property="useAuthLevel" />
+    <result column="FOLLOWER" jdbcType="VARCHAR" property="follower" />
+    <result column="CHARGING_VERSION" jdbcType="VARCHAR" property="chargingVersion" />
+    <result column="CONTRACT_BILLING_START_DATE" jdbcType="DATE" property="contractBillingStartDate" />
+    <result column="CONTRACT_BILLING_YEAR" jdbcType="VARCHAR" property="contractBillingYear" />
+    <result column="MERCHANT_CHARGE_ACCOUNT_OPEN" jdbcType="VARCHAR" property="merchantChargeAccountOpen" />
+    <result column="FOLLOWER_ID" jdbcType="VARCHAR" property="followerId" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from MERCHANT
+    where PK_ID = #{pkId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.jp.destiny.mybatis_generator.model.Merchant">
+    insert into MERCHANT (PK_ID, MERCHANT_ID, PROCESS_INSTANCE_ID, 
+      MERCHANT_NAME, MERCHANT_SHORT_NAME, MERCHANT_SHORT_CODE, 
+      CREDIT_CODE, UP_MERCHANT_ID, UP_MERCHANT_IDS, 
+      REGISTERED_CAPITAL, REGISTERED_DATE, BIZ_END_DATE, 
+      BIZ_START_DATE, CONTRACT_START_DATE, CONTRACT_YEAR, 
+      IS_STANDARD, ADDRESS, INDUSTRY, 
+      MERCHANT_RELATION_ID, MERCHANT_TYPE, ENTERPRISE_TYPE, 
+      ENTERPRISE_MAILBOX, LEGAL_NAME, LEGAL_MOBILE, 
+      LEGAL_ID_NO, LEGAL_START_DATE, LEGAL_END_DATE, 
+      LEGAL_MAILBOX, CONTACTS_NAME, CONTACTS_MOBILE, 
+      REGISTERED_COMPANY, MERCHANT_SOURCES, TO_CUSTOMER_MANAGER_ID, 
+      TO_CUSTOMER_MANAGER_NAME, REC_USER_NAME, REC_USER_MOBILE, 
+      RECOMMEND_MERCHANT_NAME, RECOMMEND_MERCHANT_ID, 
+      EXPAND_USER_NAME, REGISTERED_PROVINCE_CODE, 
+      REGISTERED_PROVINCE_NAME, REGISTERED_CITY_CODE, 
+      REGISTERED_CITY_NAME, REGISTERED_AREA_CODE, 
+      REGISTERED_AREA_NAME, REGISTERED_ADDR, CONTACTS_PROVINCE_CODE, 
+      CONTACTS_PROVINCE_NAME, CONTACTS_CITY_CODE, 
+      CONTACTS_CITY_NAME, CONTACTS_AREA_CODE, CONTACTS_AREA_NAME, 
+      CONTACTS_ADDR, MERCHANT_STATUS, BIZ_SCOPE, 
+      APPROVAL_STATUS, RAW_CREATE_USER, RAW_CREATE_TIME, 
+      RAW_UPDATE_USER, RAW_UPDATE_TIME, OPERATION_USER_NAME, 
+      OPERATION_USER_MOBILE, FINANCE_USER_NAME, FINANCE_USER_MOBILE, 
+      OTHER_USER_NAME, OTHER_USER_MOBILE, CONTROL_USER_TYPE, 
+      CONTROL_USER_NAME, CONTROL_USER_MOBILE, CONTROL_ID_NO, 
+      IS_LEGAL_PERSON_CHANGE, IS_LEGAL_SIGN, BELONG_OPPORTUNITY_ID, 
+      BELONG_OPPORTUNITY_NAME, VERIFICATION_DESC, 
+      CURRENT_ROLE_ID, ESIGN_ACCOUNT_ID, STAFF_NUM, 
+      MONTH_LOAN_AMT, IS_TENANT, FUNDING_PARTY_NATURE, 
+      USE_AUTH_LEVEL, FOLLOWER, CHARGING_VERSION, 
+      CONTRACT_BILLING_START_DATE, CONTRACT_BILLING_YEAR, 
+      MERCHANT_CHARGE_ACCOUNT_OPEN, FOLLOWER_ID)
+    values (#{pkId,jdbcType=VARCHAR}, #{merchantId,jdbcType=VARCHAR}, #{processInstanceId,jdbcType=VARCHAR}, 
+      #{merchantName,jdbcType=VARCHAR}, #{merchantShortName,jdbcType=VARCHAR}, #{merchantShortCode,jdbcType=VARCHAR}, 
+      #{creditCode,jdbcType=VARCHAR}, #{upMerchantId,jdbcType=VARCHAR}, #{upMerchantIds,jdbcType=VARCHAR}, 
+      #{registeredCapital,jdbcType=VARCHAR}, #{registeredDate,jdbcType=DATE}, #{bizEndDate,jdbcType=VARCHAR}, 
+      #{bizStartDate,jdbcType=VARCHAR}, #{contractStartDate,jdbcType=DATE}, #{contractYear,jdbcType=INTEGER}, 
+      #{isStandard,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{industry,jdbcType=VARCHAR}, 
+      #{merchantRelationId,jdbcType=VARCHAR}, #{merchantType,jdbcType=VARCHAR}, #{enterpriseType,jdbcType=VARCHAR}, 
+      #{enterpriseMailbox,jdbcType=VARCHAR}, #{legalName,jdbcType=VARCHAR}, #{legalMobile,jdbcType=VARCHAR}, 
+      #{legalIdNo,jdbcType=VARCHAR}, #{legalStartDate,jdbcType=VARCHAR}, #{legalEndDate,jdbcType=VARCHAR}, 
+      #{legalMailbox,jdbcType=VARCHAR}, #{contactsName,jdbcType=VARCHAR}, #{contactsMobile,jdbcType=VARCHAR}, 
+      #{registeredCompany,jdbcType=VARCHAR}, #{merchantSources,jdbcType=VARCHAR}, #{toCustomerManagerId,jdbcType=VARCHAR}, 
+      #{toCustomerManagerName,jdbcType=VARCHAR}, #{recUserName,jdbcType=VARCHAR}, #{recUserMobile,jdbcType=VARCHAR}, 
+      #{recommendMerchantName,jdbcType=VARCHAR}, #{recommendMerchantId,jdbcType=VARCHAR}, 
+      #{expandUserName,jdbcType=VARCHAR}, #{registeredProvinceCode,jdbcType=VARCHAR}, 
+      #{registeredProvinceName,jdbcType=VARCHAR}, #{registeredCityCode,jdbcType=VARCHAR}, 
+      #{registeredCityName,jdbcType=VARCHAR}, #{registeredAreaCode,jdbcType=VARCHAR}, 
+      #{registeredAreaName,jdbcType=VARCHAR}, #{registeredAddr,jdbcType=VARCHAR}, #{contactsProvinceCode,jdbcType=VARCHAR}, 
+      #{contactsProvinceName,jdbcType=VARCHAR}, #{contactsCityCode,jdbcType=VARCHAR}, 
+      #{contactsCityName,jdbcType=VARCHAR}, #{contactsAreaCode,jdbcType=VARCHAR}, #{contactsAreaName,jdbcType=VARCHAR}, 
+      #{contactsAddr,jdbcType=VARCHAR}, #{merchantStatus,jdbcType=VARCHAR}, #{bizScope,jdbcType=VARCHAR}, 
+      #{approvalStatus,jdbcType=VARCHAR}, #{rawCreateUser,jdbcType=VARCHAR}, #{rawCreateTime,jdbcType=TIMESTAMP}, 
+      #{rawUpdateUser,jdbcType=VARCHAR}, #{rawUpdateTime,jdbcType=TIMESTAMP}, #{operationUserName,jdbcType=VARCHAR}, 
+      #{operationUserMobile,jdbcType=VARCHAR}, #{financeUserName,jdbcType=VARCHAR}, #{financeUserMobile,jdbcType=VARCHAR}, 
+      #{otherUserName,jdbcType=VARCHAR}, #{otherUserMobile,jdbcType=VARCHAR}, #{controlUserType,jdbcType=VARCHAR}, 
+      #{controlUserName,jdbcType=VARCHAR}, #{controlUserMobile,jdbcType=VARCHAR}, #{controlIdNo,jdbcType=VARCHAR}, 
+      #{isLegalPersonChange,jdbcType=VARCHAR}, #{isLegalSign,jdbcType=INTEGER}, #{belongOpportunityId,jdbcType=VARCHAR}, 
+      #{belongOpportunityName,jdbcType=VARCHAR}, #{verificationDesc,jdbcType=VARCHAR}, 
+      #{currentRoleId,jdbcType=VARCHAR}, #{esignAccountId,jdbcType=VARCHAR}, #{staffNum,jdbcType=INTEGER}, 
+      #{monthLoanAmt,jdbcType=DECIMAL}, #{isTenant,jdbcType=VARCHAR}, #{fundingPartyNature,jdbcType=VARCHAR}, 
+      #{useAuthLevel,jdbcType=VARCHAR}, #{follower,jdbcType=VARCHAR}, #{chargingVersion,jdbcType=VARCHAR}, 
+      #{contractBillingStartDate,jdbcType=DATE}, #{contractBillingYear,jdbcType=VARCHAR}, 
+      #{merchantChargeAccountOpen,jdbcType=VARCHAR}, #{followerId,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.jp.destiny.mybatis_generator.model.Merchant">
+    update MERCHANT
+    set MERCHANT_ID = #{merchantId,jdbcType=VARCHAR},
+      PROCESS_INSTANCE_ID = #{processInstanceId,jdbcType=VARCHAR},
+      MERCHANT_NAME = #{merchantName,jdbcType=VARCHAR},
+      MERCHANT_SHORT_NAME = #{merchantShortName,jdbcType=VARCHAR},
+      MERCHANT_SHORT_CODE = #{merchantShortCode,jdbcType=VARCHAR},
+      CREDIT_CODE = #{creditCode,jdbcType=VARCHAR},
+      UP_MERCHANT_ID = #{upMerchantId,jdbcType=VARCHAR},
+      UP_MERCHANT_IDS = #{upMerchantIds,jdbcType=VARCHAR},
+      REGISTERED_CAPITAL = #{registeredCapital,jdbcType=VARCHAR},
+      REGISTERED_DATE = #{registeredDate,jdbcType=DATE},
+      BIZ_END_DATE = #{bizEndDate,jdbcType=VARCHAR},
+      BIZ_START_DATE = #{bizStartDate,jdbcType=VARCHAR},
+      CONTRACT_START_DATE = #{contractStartDate,jdbcType=DATE},
+      CONTRACT_YEAR = #{contractYear,jdbcType=INTEGER},
+      IS_STANDARD = #{isStandard,jdbcType=VARCHAR},
+      ADDRESS = #{address,jdbcType=VARCHAR},
+      INDUSTRY = #{industry,jdbcType=VARCHAR},
+      MERCHANT_RELATION_ID = #{merchantRelationId,jdbcType=VARCHAR},
+      MERCHANT_TYPE = #{merchantType,jdbcType=VARCHAR},
+      ENTERPRISE_TYPE = #{enterpriseType,jdbcType=VARCHAR},
+      ENTERPRISE_MAILBOX = #{enterpriseMailbox,jdbcType=VARCHAR},
+      LEGAL_NAME = #{legalName,jdbcType=VARCHAR},
+      LEGAL_MOBILE = #{legalMobile,jdbcType=VARCHAR},
+      LEGAL_ID_NO = #{legalIdNo,jdbcType=VARCHAR},
+      LEGAL_START_DATE = #{legalStartDate,jdbcType=VARCHAR},
+      LEGAL_END_DATE = #{legalEndDate,jdbcType=VARCHAR},
+      LEGAL_MAILBOX = #{legalMailbox,jdbcType=VARCHAR},
+      CONTACTS_NAME = #{contactsName,jdbcType=VARCHAR},
+      CONTACTS_MOBILE = #{contactsMobile,jdbcType=VARCHAR},
+      REGISTERED_COMPANY = #{registeredCompany,jdbcType=VARCHAR},
+      MERCHANT_SOURCES = #{merchantSources,jdbcType=VARCHAR},
+      TO_CUSTOMER_MANAGER_ID = #{toCustomerManagerId,jdbcType=VARCHAR},
+      TO_CUSTOMER_MANAGER_NAME = #{toCustomerManagerName,jdbcType=VARCHAR},
+      REC_USER_NAME = #{recUserName,jdbcType=VARCHAR},
+      REC_USER_MOBILE = #{recUserMobile,jdbcType=VARCHAR},
+      RECOMMEND_MERCHANT_NAME = #{recommendMerchantName,jdbcType=VARCHAR},
+      RECOMMEND_MERCHANT_ID = #{recommendMerchantId,jdbcType=VARCHAR},
+      EXPAND_USER_NAME = #{expandUserName,jdbcType=VARCHAR},
+      REGISTERED_PROVINCE_CODE = #{registeredProvinceCode,jdbcType=VARCHAR},
+      REGISTERED_PROVINCE_NAME = #{registeredProvinceName,jdbcType=VARCHAR},
+      REGISTERED_CITY_CODE = #{registeredCityCode,jdbcType=VARCHAR},
+      REGISTERED_CITY_NAME = #{registeredCityName,jdbcType=VARCHAR},
+      REGISTERED_AREA_CODE = #{registeredAreaCode,jdbcType=VARCHAR},
+      REGISTERED_AREA_NAME = #{registeredAreaName,jdbcType=VARCHAR},
+      REGISTERED_ADDR = #{registeredAddr,jdbcType=VARCHAR},
+      CONTACTS_PROVINCE_CODE = #{contactsProvinceCode,jdbcType=VARCHAR},
+      CONTACTS_PROVINCE_NAME = #{contactsProvinceName,jdbcType=VARCHAR},
+      CONTACTS_CITY_CODE = #{contactsCityCode,jdbcType=VARCHAR},
+      CONTACTS_CITY_NAME = #{contactsCityName,jdbcType=VARCHAR},
+      CONTACTS_AREA_CODE = #{contactsAreaCode,jdbcType=VARCHAR},
+      CONTACTS_AREA_NAME = #{contactsAreaName,jdbcType=VARCHAR},
+      CONTACTS_ADDR = #{contactsAddr,jdbcType=VARCHAR},
+      MERCHANT_STATUS = #{merchantStatus,jdbcType=VARCHAR},
+      BIZ_SCOPE = #{bizScope,jdbcType=VARCHAR},
+      APPROVAL_STATUS = #{approvalStatus,jdbcType=VARCHAR},
+      RAW_CREATE_USER = #{rawCreateUser,jdbcType=VARCHAR},
+      RAW_CREATE_TIME = #{rawCreateTime,jdbcType=TIMESTAMP},
+      RAW_UPDATE_USER = #{rawUpdateUser,jdbcType=VARCHAR},
+      RAW_UPDATE_TIME = #{rawUpdateTime,jdbcType=TIMESTAMP},
+      OPERATION_USER_NAME = #{operationUserName,jdbcType=VARCHAR},
+      OPERATION_USER_MOBILE = #{operationUserMobile,jdbcType=VARCHAR},
+      FINANCE_USER_NAME = #{financeUserName,jdbcType=VARCHAR},
+      FINANCE_USER_MOBILE = #{financeUserMobile,jdbcType=VARCHAR},
+      OTHER_USER_NAME = #{otherUserName,jdbcType=VARCHAR},
+      OTHER_USER_MOBILE = #{otherUserMobile,jdbcType=VARCHAR},
+      CONTROL_USER_TYPE = #{controlUserType,jdbcType=VARCHAR},
+      CONTROL_USER_NAME = #{controlUserName,jdbcType=VARCHAR},
+      CONTROL_USER_MOBILE = #{controlUserMobile,jdbcType=VARCHAR},
+      CONTROL_ID_NO = #{controlIdNo,jdbcType=VARCHAR},
+      IS_LEGAL_PERSON_CHANGE = #{isLegalPersonChange,jdbcType=VARCHAR},
+      IS_LEGAL_SIGN = #{isLegalSign,jdbcType=INTEGER},
+      BELONG_OPPORTUNITY_ID = #{belongOpportunityId,jdbcType=VARCHAR},
+      BELONG_OPPORTUNITY_NAME = #{belongOpportunityName,jdbcType=VARCHAR},
+      VERIFICATION_DESC = #{verificationDesc,jdbcType=VARCHAR},
+      CURRENT_ROLE_ID = #{currentRoleId,jdbcType=VARCHAR},
+      ESIGN_ACCOUNT_ID = #{esignAccountId,jdbcType=VARCHAR},
+      STAFF_NUM = #{staffNum,jdbcType=INTEGER},
+      MONTH_LOAN_AMT = #{monthLoanAmt,jdbcType=DECIMAL},
+      IS_TENANT = #{isTenant,jdbcType=VARCHAR},
+      FUNDING_PARTY_NATURE = #{fundingPartyNature,jdbcType=VARCHAR},
+      USE_AUTH_LEVEL = #{useAuthLevel,jdbcType=VARCHAR},
+      FOLLOWER = #{follower,jdbcType=VARCHAR},
+      CHARGING_VERSION = #{chargingVersion,jdbcType=VARCHAR},
+      CONTRACT_BILLING_START_DATE = #{contractBillingStartDate,jdbcType=DATE},
+      CONTRACT_BILLING_YEAR = #{contractBillingYear,jdbcType=VARCHAR},
+      MERCHANT_CHARGE_ACCOUNT_OPEN = #{merchantChargeAccountOpen,jdbcType=VARCHAR},
+      FOLLOWER_ID = #{followerId,jdbcType=VARCHAR}
+    where PK_ID = #{pkId,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select PK_ID, MERCHANT_ID, PROCESS_INSTANCE_ID, MERCHANT_NAME, MERCHANT_SHORT_NAME, 
+    MERCHANT_SHORT_CODE, CREDIT_CODE, UP_MERCHANT_ID, UP_MERCHANT_IDS, REGISTERED_CAPITAL, 
+    REGISTERED_DATE, BIZ_END_DATE, BIZ_START_DATE, CONTRACT_START_DATE, CONTRACT_YEAR, 
+    IS_STANDARD, ADDRESS, INDUSTRY, MERCHANT_RELATION_ID, MERCHANT_TYPE, ENTERPRISE_TYPE, 
+    ENTERPRISE_MAILBOX, LEGAL_NAME, LEGAL_MOBILE, LEGAL_ID_NO, LEGAL_START_DATE, LEGAL_END_DATE, 
+    LEGAL_MAILBOX, CONTACTS_NAME, CONTACTS_MOBILE, REGISTERED_COMPANY, MERCHANT_SOURCES, 
+    TO_CUSTOMER_MANAGER_ID, TO_CUSTOMER_MANAGER_NAME, REC_USER_NAME, REC_USER_MOBILE, 
+    RECOMMEND_MERCHANT_NAME, RECOMMEND_MERCHANT_ID, EXPAND_USER_NAME, REGISTERED_PROVINCE_CODE, 
+    REGISTERED_PROVINCE_NAME, REGISTERED_CITY_CODE, REGISTERED_CITY_NAME, REGISTERED_AREA_CODE, 
+    REGISTERED_AREA_NAME, REGISTERED_ADDR, CONTACTS_PROVINCE_CODE, CONTACTS_PROVINCE_NAME, 
+    CONTACTS_CITY_CODE, CONTACTS_CITY_NAME, CONTACTS_AREA_CODE, CONTACTS_AREA_NAME, CONTACTS_ADDR, 
+    MERCHANT_STATUS, BIZ_SCOPE, APPROVAL_STATUS, RAW_CREATE_USER, RAW_CREATE_TIME, RAW_UPDATE_USER, 
+    RAW_UPDATE_TIME, OPERATION_USER_NAME, OPERATION_USER_MOBILE, FINANCE_USER_NAME, FINANCE_USER_MOBILE, 
+    OTHER_USER_NAME, OTHER_USER_MOBILE, CONTROL_USER_TYPE, CONTROL_USER_NAME, CONTROL_USER_MOBILE, 
+    CONTROL_ID_NO, IS_LEGAL_PERSON_CHANGE, IS_LEGAL_SIGN, BELONG_OPPORTUNITY_ID, BELONG_OPPORTUNITY_NAME, 
+    VERIFICATION_DESC, CURRENT_ROLE_ID, ESIGN_ACCOUNT_ID, STAFF_NUM, MONTH_LOAN_AMT, 
+    IS_TENANT, FUNDING_PARTY_NATURE, USE_AUTH_LEVEL, FOLLOWER, CHARGING_VERSION, CONTRACT_BILLING_START_DATE, 
+    CONTRACT_BILLING_YEAR, MERCHANT_CHARGE_ACCOUNT_OPEN, FOLLOWER_ID
+    from MERCHANT
+    where PK_ID = #{pkId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select PK_ID, MERCHANT_ID, PROCESS_INSTANCE_ID, MERCHANT_NAME, MERCHANT_SHORT_NAME, 
+    MERCHANT_SHORT_CODE, CREDIT_CODE, UP_MERCHANT_ID, UP_MERCHANT_IDS, REGISTERED_CAPITAL, 
+    REGISTERED_DATE, BIZ_END_DATE, BIZ_START_DATE, CONTRACT_START_DATE, CONTRACT_YEAR, 
+    IS_STANDARD, ADDRESS, INDUSTRY, MERCHANT_RELATION_ID, MERCHANT_TYPE, ENTERPRISE_TYPE, 
+    ENTERPRISE_MAILBOX, LEGAL_NAME, LEGAL_MOBILE, LEGAL_ID_NO, LEGAL_START_DATE, LEGAL_END_DATE, 
+    LEGAL_MAILBOX, CONTACTS_NAME, CONTACTS_MOBILE, REGISTERED_COMPANY, MERCHANT_SOURCES, 
+    TO_CUSTOMER_MANAGER_ID, TO_CUSTOMER_MANAGER_NAME, REC_USER_NAME, REC_USER_MOBILE, 
+    RECOMMEND_MERCHANT_NAME, RECOMMEND_MERCHANT_ID, EXPAND_USER_NAME, REGISTERED_PROVINCE_CODE, 
+    REGISTERED_PROVINCE_NAME, REGISTERED_CITY_CODE, REGISTERED_CITY_NAME, REGISTERED_AREA_CODE, 
+    REGISTERED_AREA_NAME, REGISTERED_ADDR, CONTACTS_PROVINCE_CODE, CONTACTS_PROVINCE_NAME, 
+    CONTACTS_CITY_CODE, CONTACTS_CITY_NAME, CONTACTS_AREA_CODE, CONTACTS_AREA_NAME, CONTACTS_ADDR, 
+    MERCHANT_STATUS, BIZ_SCOPE, APPROVAL_STATUS, RAW_CREATE_USER, RAW_CREATE_TIME, RAW_UPDATE_USER, 
+    RAW_UPDATE_TIME, OPERATION_USER_NAME, OPERATION_USER_MOBILE, FINANCE_USER_NAME, FINANCE_USER_MOBILE, 
+    OTHER_USER_NAME, OTHER_USER_MOBILE, CONTROL_USER_TYPE, CONTROL_USER_NAME, CONTROL_USER_MOBILE, 
+    CONTROL_ID_NO, IS_LEGAL_PERSON_CHANGE, IS_LEGAL_SIGN, BELONG_OPPORTUNITY_ID, BELONG_OPPORTUNITY_NAME, 
+    VERIFICATION_DESC, CURRENT_ROLE_ID, ESIGN_ACCOUNT_ID, STAFF_NUM, MONTH_LOAN_AMT, 
+    IS_TENANT, FUNDING_PARTY_NATURE, USE_AUTH_LEVEL, FOLLOWER, CHARGING_VERSION, CONTRACT_BILLING_START_DATE, 
+    CONTRACT_BILLING_YEAR, MERCHANT_CHARGE_ACCOUNT_OPEN, FOLLOWER_ID
+    from MERCHANT
+  </select>
+</mapper>
